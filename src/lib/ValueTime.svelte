@@ -1,7 +1,14 @@
 <script>
-    export let value;
+	export let value;
+
+	const handleChange = (e) => {
+		value = e.target.value;
+	};
 </script>
 
-<!-- TODO -->
-{value}
-<!--      -->
+<input
+	type="time"
+	bind:value
+	class="input input-bordered w-full border-accent"
+	on:change={handleChange}
+/>

@@ -27,7 +27,29 @@ Le repo à cloner avec l’application de démarrage : https://gitlab.com/mvtech
 
 je constate que l'affichage initial correspond bien à ce qui est donné par l'API : true pour pirate et false pour dwarf
 
-6. Terminer le composant ValueTime : (PAS ENCORE FAIT)
+6. Terminer le composant ValueTime : en reprenant la structure des autres composants, j'ai simplement utilisé un input avec le type="time"
+
+7. Le champs desc d'un noeud est affiché, s'il est présent : je n'y suis pas arrivé
+
+8. Composant ValueDateTime : expliquer la fonction handleChange :
+   La fonction handleChange permet de récupérer la date donnée par l'utilisateur. Il faut pour cela faire plusieurs conversions.
+   Pour m'aider j'ai effectué des console.log des variables :
+
+- le slice(0,-8) sert à supprimer les secondes et milliseccondes ainsi que le Z
+- userinput : on récupère d'abord l'heure locale indiquée par l'utilisateur.
+- dateInLocale : puis on utilise la fonction JS new Date() pour pouvoir utiliser des méthodes dessus
+- clientOffset : connaître le décalage horaire du client par rapport à l'heure GMT, exprimé en minutes.
+- inputInUTCMs : C'est la valeur numérique en millisecondes de l'heure UTC correspondant à l'heure indiquée par l'utilisateur. En effet : getTime renvoie la valeur numérique relative à UTC en milliseconde. Donc il faut retrancher le décalage horaire, converti en millisec (avec *60*1000)
+- puis value est assignée à cette date, convertie en chaine de caractère au format ISO
+- et on supprime les secondes et millisecondes et le Z via slice
+
+9. Avantages selon vous à utiliser TailwindCSS :
+
+- on peut lire directement dans le fichier les classes Tailwind utilisées, on n'a pas besoin d'étudier un fichier CSS annexe.
+- des classes CSS sont prêtes et "préformatées" : on peut rapidement écrire du style une fois Tailwind maîtrisé"
+
+10. Avantages selon vous à utiliser DaisyUI :
+    C'est une bibliothèque de composants venant enrichir TailWind. Y sont fournis par exemple des boutons, des caroussels etc... Cela permet par import de fournir de jolis composants très rapidement .
 
 =================================================
 

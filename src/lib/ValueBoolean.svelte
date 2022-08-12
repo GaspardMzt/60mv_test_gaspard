@@ -7,13 +7,6 @@
 </script>
 
 <div class="tooltip tooltip-right" data-tip="Value: {value ?? 'false'}">
-	<!-- <input
-		type="number"
-		step="1"
-		bind:value
-		class="input input-bordered w-full border-accent"
-		on:change={handleChange}
-	/> -->
 	<input
 		type="button"
 		bind:value
